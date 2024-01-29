@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { RiRefreshLine } from "react-icons/ri";
 import axios from 'axios';
 import { baseUrl } from '../App';
+import '../App.css'
 
 const Status = (props) => {
+  console.log(props)
   const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
@@ -23,20 +25,7 @@ const Status = (props) => {
   return (
     <button
       onClick={handleClick}
-      style={{
-        backgroundColor: props.done === false ? '#FF9500' : '#35C759',
-        color: 'white',
-        padding: '4px 6px',
-        border: 'none',
-        width: '84px',
-        cursor: loading ? 'not-allowed' : 'pointer',
-        borderRadius: '12px',
-        fontWeight: '500',
-        fontSize: '14px',
-        position: 'relative',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
+      className={`button-container ${props.done ? 'done' : ''}  ${loading ? 'disabled' : ''}`}
     >
       {loading ? (
         <RiRefreshLine className="spin" />

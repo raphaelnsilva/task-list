@@ -41,14 +41,14 @@ export default function FormCreate(props) {
   return (
     <React.Fragment>
       <div className='add_btn' onClick={handleClickOpen}>
-        <span>Adicionar Tarefa</span>
+        <span>Adicionar tarefa</span>
         <IoAdd />
       </div>
       <Dialog
         open={open}
         onClose={handleClose}
       >
-        <DialogTitle>Adicionar Tarefa</DialogTitle>
+        <DialogTitle>Adicionar tarefa</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus

@@ -11,7 +11,7 @@ const Task = (props) => {
     <li key={props.id} className='todo_list-li'>
       <div className='todo_list-task'>
         <p>{props.task}</p>
-        <p style={{color: '#707070'}}>{format(new Date(props.date), 'MMM yyyy HH:mm')}</p>
+        <p className='task_date'>{format(new Date(props.date), 'MMM yyyy HH:mm')}</p>
       </div>
       <div className='toolbar'>
         <Status

@@ -1,14 +1,17 @@
 :root {
   --background-light-color: #FCF6FF;
-  --font-dark-color-2: #707070;
+  --background-gray-color: #EFEFEF;
+  --font-dark-color-2: #a3a3a3;
   --font-dark-color: #000;
   --border-light: #ddd;
 }
+
 * {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
 html,
 body {
   background-color: var(--background-light-color);
@@ -29,11 +32,13 @@ body {
   background: linear-gradient(to bottom, #000, #979797);
   -webkit-background-clip: text;
   color: transparent;
+  padding: 20px 0;
+  font-size: 28px;
 }
 
 .search_form {
   display: flex;
-  background-color: #EFEFEF;
+  background-color: var(--background-gray-color);
   padding: 6px;
   gap: 10px;
   border-radius: 10px; 
@@ -46,6 +51,10 @@ body {
   outline: none;
   width: 100%;
   font-size: 14px;
+}
+
+.search_form-input::placeholder {
+  color: var(--font-dark-color-2);
 }
 
 .search_form-svg {
@@ -64,6 +73,10 @@ body {
   font-size: 14px;
 }
 
+.add_btn:hover {
+  box-shadow: 0px 0px 6px #d4e7fb;
+}
+
 .edit_btn {
   color: var(--font-dark-color-2);
   cursor: pointer;
@@ -71,6 +84,13 @@ body {
   align-items: center;
   background: transparent;
   border: none;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.edit_btn:hover {
+  background-color: var(--background-gray-color);
+  border-radius: 6px;
 }
 
 .todo_list {
@@ -90,6 +110,10 @@ body {
   font-size: 14px; 
   display: flex;
   flex-direction: column;
+}
+
+.task_date {
+  color: var(--font-dark-color-2);
 }
 
 .todo {
@@ -137,4 +161,69 @@ body {
   align-items: center;
   gap: 10px;
   font-size: 18px;
+}
+
+.button-container {
+  background-color: #FF9500;
+  color: white;
+  padding: 4px 6px;
+  border: none;
+  width: 84px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container.done {
+  background-color: #35C759;
+}
+
+.button-container.disabled {
+  cursor: not-allowed;
+}
+
+@media(min-width: 800px) {
+  .search_form-input {
+    font-size: 18px;
+  }
+
+  .search_form-svg {
+    font-size: 22px;
+  }
+
+  .add_btn {
+    font-size: 18px;
+  }
+
+  .todo_list-task {
+    font-size: 18px; 
+  }
+
+  .no_task-icon {
+    font-size: 54px;
+  }
+  
+  .loading_home {
+    font-size: 22px;
+  }
+  
+  .main_container-h1 {
+    font-size: 32px;
+  }
+
+  .edit_btn {
+    font-size: 18px;
+  }
+
+  .button-container {
+    width: 88px;
+    height: 32px;
+    font-size: 15px;
+  }
 }
