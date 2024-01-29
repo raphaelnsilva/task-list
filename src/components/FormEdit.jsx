@@ -53,7 +53,7 @@ export default function FormEdit(props) {
         <IoIosArrowForward />
       </button>
       <Dialog open={props.open} onClose={handleClose}>
-        <DialogTitle>Edite sua tarefa</DialogTitle>
+        <DialogTitle>Editar tarefa</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
@@ -66,7 +66,7 @@ export default function FormEdit(props) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancelar</Button>
+          <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={() => handleDeleteTodo()}>Excluir</Button>
           {editedTask ? (
             <Button onClick={() => handleEdit()}>

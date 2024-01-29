@@ -10,9 +10,10 @@ import { baseUrl } from '../App'
 import { IoAdd } from "react-icons/io5"
 
 
-export default function FormCreate({ updateTasks }) {
+export default function FormCreate(props) {
   const [open, setOpen] = React.useState(false)
   const [newTask, setNewTask] = React.useState('')
+  const [buttonDisabled, setButtonDisabled] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -24,13 +25,17 @@ export default function FormCreate({ updateTasks }) {
 
   const handleSubmit = async () => {
     try {
+      setButtonDisabled(true)
+    
       await axios.post(`${baseUrl}/create`, { task: newTask })
       
-      updateTasks()
+      props.updateTasks()
     } catch (err) {
       console.log(err)
+    } finally {
+      setButtonDisabled(false) 
+      setOpen(false)
     }
-    setOpen(false)
   }
 
   return (
@@ -47,6 +52,7 @@ export default function FormCreate({ updateTasks }) {
         <DialogContent>
           <TextField
             autoFocus
+            autoComplete='off'
             margin="normal"
             label="Digite sua tarefa aqui.."
             type="text"
@@ -57,8 +63,8 @@ export default function FormCreate({ updateTasks }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
-          {newTask ? (
-            <Button onClick={handleSubmit}>Pronto</Button>
+          {newTask.length > 2 ? (
+            <Button onClick={handleSubmit} disabled={buttonDisabled}>Pronto</Button>
             ) : (
             <Button disabled>Pronto</Button>
           )}

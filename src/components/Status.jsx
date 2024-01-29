@@ -28,12 +28,14 @@ const Status = (props) => {
         color: 'white',
         padding: '4px 6px',
         border: 'none',
-        width: '80px',
+        width: '84px',
         cursor: loading ? 'not-allowed' : 'pointer',
         borderRadius: '12px',
         fontWeight: '500',
-        fontSize: '12px',
+        fontSize: '14px',
         position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
       }}
     >
       {loading ? (
