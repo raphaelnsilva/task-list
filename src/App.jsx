@@ -51,7 +51,7 @@ function App() {
 
   return (
     <main className='main_container'>
-      <h1 className='main_container-h1'>Task List</h1>
+      <h1 className='main_container-h1'>Tarefas</h1>
       <form className='search_form'>
         <IoSearch className='search_form-svg'/>
         <input
