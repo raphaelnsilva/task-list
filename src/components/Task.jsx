@@ -10,7 +10,7 @@ const Task = (props) => {
   return (
     <li key={props.id} className='todo_list-li'>
       <div className='todo_list-task'>
-        <p>{props.task}</p>
+        <p className='userTask'>{props.task}</p>
         <p className='task_date'>{format(new Date(props.date), 'MMM yyyy HH:mm')}</p>
       </div>
       <div className='toolbar'>

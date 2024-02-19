@@ -76,7 +76,7 @@ function App() {
             </div>
           ) : (
             <>
-              {filteredData.map((task) => (
+              {filteredData.reverse().map((task) => (
                 <Task 
                   key={task._id}
                   task={task.task}

@@ -5,7 +5,6 @@ import { baseUrl } from '../App';
 import '../App.css'
 
 const Status = (props) => {
-  console.log(props)
   const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
