@@ -7,7 +7,7 @@ import Task from './components/Task'
 import { PiConfettiLight } from "react-icons/pi"
 import { RiRefreshLine } from "react-icons/ri";
 
-export const baseUrl = 'https://api-task-list.vercel.app'
+export const baseUrl = process.env.REACT_APP_BASE_URL
 
 function App() {
   const [searchQuery, setSearchQuery] = React.useState('')
